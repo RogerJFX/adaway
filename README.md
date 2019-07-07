@@ -34,3 +34,17 @@ Next steps might be:
 
 - not only making the iframes invisible, but the parent elements as well (if there is no other content inside)
 - dummy clicking ads randomly in order to dazzle trackers
+
+---
+
+### Here is how to test it: ###
+
+1. go to \[folder of your choice\]
+1. git clone https://github.com/RogerJFX/adaway.git
+1. open chrome
+1. type "chrome://extensions" to the location bar and press ENTER
+1. check the developers mode top right
+1. Click the button 'LOAD UNPACKED', top left
+1. go to \[folder of your choice\] and mark adaway
+1. click OK
+1. that's it, now you can test it, just go to a common site
