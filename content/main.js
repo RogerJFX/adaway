@@ -4,7 +4,7 @@ window.$aa = window.$aa || {};
 
     let active = true;
 
-    function hideIframes() {
+    function hideFrames() {
         const att = active ? 'none' : 'block';
         Array.from(document.querySelectorAll('iframe'))
             .filter(f => f.style.display !== att)
@@ -12,14 +12,14 @@ window.$aa = window.$aa || {};
     }
 
     function startFrameGuard() {
-        window.setInterval(hideIframes, 500);
+        window.setInterval(hideFrames, 500);
     }
 
     window.addEventListener('load', startFrameGuard, true);
 
     me.toggleActive = () => {
         active = !active;
-        hideIframes();
+        hideFrames();
         return active;
     };
 

@@ -36,7 +36,7 @@
         "https://*/*"
       ],
       "js": [
-        "content/messager.js",
+        "content/messenger.js",
         "content/main.js"
       ]
     }
