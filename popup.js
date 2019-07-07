@@ -1,17 +1,38 @@
-
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
 'use strict';
-function click(e) {
-  chrome.tabs.executeScript(null,
-      {code:"alert('" + e.target.id + "')"});
-  window.close();
+
+function log(msg) {
+    chrome.tabs.executeScript(null,
+        {code: "console.log('" + msg + "')"});
 }
+let activeButton;
+
+function clickActivationToggle() {
+
+    // chrome.tabs.executeScript(null,
+    //     {code: "console.log('" + e.target.id + "')"});
+
+    chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {wot: "toggleActive"}, function (response) {
+            log('adaway active: ' + response.res);
+            window.close();
+        });
+    });
+}
+
+function isActive(then) {
+    chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {wot: "isActive"}, function (response) {
+            then(response.res);
+        });
+
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-  var divs = document.querySelectorAll('div');
-  for (var i = 0; i < divs.length; i++) {
-    divs[i].addEventListener('click', click);
-  }
+    activeButton = document.getElementById('active');
+    activeButton.addEventListener('click', clickActivationToggle);
+    isActive(function(active) {
+        activeButton.innerHTML = active ? 'Deactivate' : 'Activate';
+    });
 });
 

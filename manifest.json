@@ -4,7 +4,8 @@
     "description": "Hide's ads",
     "permissions": [
 		"storage",
-		"activeTab"
+		"activeTab",
+		"tabs"
 	],
     "background": {
       "scripts": ["background.js"],
@@ -33,7 +34,8 @@
 				"https://*/*"
 			],
 			"js": [
-				"content.js"
+                "cntMessage.js",
+				"cntMain.js"
 			]
 		}
 	],
