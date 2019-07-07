@@ -1,43 +1,45 @@
 {
-    "name": "Ad away",
-    "version": "1.0",
-    "description": "Hide's ads",
-    "permissions": [
-		"storage",
-		"activeTab",
-		"tabs"
-	],
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
-    },
-    "icons": {
+  "name": "Ad away",
+  "version": "1.0",
+  "description": "Hide's ads",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_title": "Hide nasty ads.",
+    "default_icon": {
       "16": "images/icon16.png",
       "32": "images/icon32.png",
       "48": "images/icon48.png",
       "128": "images/icon128.png"
     },
-    "browser_action": {
-		"default_title": "Hide nasty ads.",
-		"default_icon": {
-			"16": "images/icon16.png",
-			"32": "images/icon32.png",
-			"48": "images/icon48.png",
-			"128": "images/icon128.png"
-		},
-		"default_popup": "popup.html"
-	},
-	"content_scripts": [
-		{
-			"matches": [
-				"http://*/*",
-				"https://*/*"
-			],
-			"js": [
-                "cntMessage.js",
-				"cntMain.js"
-			]
-		}
-	],
-    "manifest_version": 2
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "cntMessage.js",
+        "cntMain.js"
+      ]
+    }
+  ],
+  "manifest_version": 2
 }
