@@ -27,5 +27,4 @@ window.$aa = window.$aa || {};
         return active;
     };
 
-
 })($aa.main = $aa.main || {});

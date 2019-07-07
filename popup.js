@@ -8,9 +8,6 @@ let activeButton;
 
 function clickActivationToggle() {
 
-    // chrome.tabs.executeScript(null,
-    //     {code: "console.log('" + e.target.id + "')"});
-
     chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, {wot: "toggleActive"}, function (response) {
             log('adaway active: ' + response.res);
@@ -35,4 +32,3 @@ document.addEventListener('DOMContentLoaded', function () {
         activeButton.innerHTML = active ? 'Deactivate' : 'Activate';
     });
 });
-
