@@ -36,8 +36,8 @@
         "https://*/*"
       ],
       "js": [
-        "cntMessage.js",
-        "cntMain.js"
+        "content/messager.js",
+        "content/main.js"
       ]
     }
   ],
