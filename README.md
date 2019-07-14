@@ -7,6 +7,8 @@ adaway
 
 This is in a very early state. Just a poc.
 
+Do NOT use it yet, if you have a small bandwidth. We currently click any detected anchor automatically. This will increase traffic tremendously.
+
 I'm quite satisfied for a start by simply getting rid of iframes to keep away ads from my mind while browsing the web.
 
 So if a site detects my ad blocker(s) and thus does not show any content, making iframes invisible instead at least spares my eyes those 
