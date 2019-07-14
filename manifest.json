@@ -39,6 +39,15 @@
         "content/messenger.js",
         "content/main.js"
       ]
+    },
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "content/frame.js"
+      ]
     }
   ],
   "manifest_version": 2
